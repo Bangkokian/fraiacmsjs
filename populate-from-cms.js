@@ -261,7 +261,10 @@ function writePhotos() {
     
     
 
-    // 2. CLEAR OUT CollectionListToFill. It should be empty
+
+
+
+    // 2. CLEAR OUT ORIGINAL CollectionListToFill. It should be empty
 
     // Select all instances of .product-slide within collectionListToFill
     // and clear them out. We already have the template.
@@ -298,6 +301,8 @@ function writePhotos() {
         newCard.classList.add('gallery-marquee_image-wrapper'); // Add a class for the slide container if needed
         newCard.setAttribute('role', 'listitem');
 
+
+        console.log(newCard);
 
 
         // Add the header if it exists
@@ -382,6 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
