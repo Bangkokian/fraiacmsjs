@@ -1,8 +1,6 @@
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<script>
 
 
 // DEV NOTE:
@@ -20,8 +18,9 @@ console.log('Checkpoint 1');
 
 document.addEventListener('DOMContentLoaded', function() {
 
-	   writeProductsServices();
+       writeProductsServices();
        writeIndustryUseCases();
+       writePhotos();
 
 });
 
@@ -308,7 +307,7 @@ function writePhotos() {
         }
 
         // Add the text box if it exists
-        if (extractSummary) {
+        if (extractCaption) {
             newCard.querySelector('.galery-marquee_text').innerText = extractCaption;
         }
 
@@ -389,9 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-</script>
 
 
 
