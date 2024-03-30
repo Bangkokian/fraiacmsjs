@@ -1,4 +1,10 @@
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+
+
 // DEV NOTE:
 // Populate native Webflow slider with CMS content.
 // Because the native Webflow slider doesn't populate dynamically with CMS content we use this workaround for FRAIA:
@@ -230,7 +236,7 @@ function writeIndustryUseCases() {
 
 
 function writePhotos() {
-    console.log('Checkpoint 4');
+    console.log('Checkpoint 6');
 
 
      // 1. MAKE A COPY AS templateCopy
@@ -377,6 +383,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
+
+
+</script>
 
 
 
