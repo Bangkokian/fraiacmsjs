@@ -313,6 +313,7 @@ function writePhotos() {
             imgElement.src = extractImg;
             imgElement.alt = 'cms image';
             imgElement.id = '';
+            imgElement.parentNode.id = '';
         }
 
         // Add the text box if it exists
@@ -391,6 +392,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
