@@ -312,6 +312,7 @@ function writePhotos() {
        //     console.log('check 8: '+imgElement);
             imgElement.src = extractImg;
             imgElement.alt = 'cms image';
+            imgElement.id = '';
         }
 
         // Add the text box if it exists
@@ -390,6 +391,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
