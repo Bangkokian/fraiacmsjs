@@ -313,7 +313,6 @@ function writePhotos() {
             imgElement.src = extractImg;
             imgElement.alt = 'cms image';
             imgElement.id = '';
-            imgElement.parentNode.id = '';
         }
 
         // Add the text box if it exists
@@ -324,7 +323,7 @@ function writePhotos() {
        
 
         // Append the newly created slideContainer to the slider
-        collectionListToFill.querySelector('.gallery-marquee_list').appendChild(newCard);
+        collectionListToFill.appendChild(newCard);
     }
 
     // Here, you might need to reinitialize or refresh your slider as mentioned earlier
