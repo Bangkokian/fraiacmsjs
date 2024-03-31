@@ -323,7 +323,7 @@ function writePhotos() {
        
 
         // Append the newly created slideContainer to the slider
-        collectionListToFill.appendChild(newCard);
+        collectionListToFill.querySelectorAll('.gallery-marquee_list')[0].appendChild(newCard);
     }
 
     // Here, you might need to reinitialize or refresh your slider as mentioned earlier
