@@ -245,15 +245,6 @@ function writePhotos() {
 
 
 
-//try this
-    // Select all elements with the class 'gallery-marquee_list'
-var elements = document.querySelectorAll('.gallery-marquee_list');
-
-// Loop through the NodeList and remove each element from its parent
-elements.forEach(function(element) {
-    element.parentNode.removeChild(element);
-});
-// end try
 
 
 
@@ -343,6 +334,17 @@ elements.forEach(function(element) {
         // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
     }
+
+    //try this
+    // Select all elements with the class 'gallery-marquee_list'
+var elements = document.querySelectorAll('.gallery-marquee_list');
+
+// Loop through the NodeList and remove each element from its parent
+elements.forEach(function(element) {
+    element.parentNode.removeChild(element);
+});
+// end try
+
 
     // Here, you might need to reinitialize or refresh your slider as mentioned earlier
     Webflow.require('slider').redraw();
