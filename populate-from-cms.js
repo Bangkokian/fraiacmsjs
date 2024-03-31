@@ -313,7 +313,7 @@ function writePhotos() {
 
         // Add the text box if it exists
         if (extractCaption) {
-            newCard.querySelector('.gallery-marquee_text').innerText = extractCaption;
+            newCard.querySelector('gallery-marquee_text').innerText = extractCaption;
         }
 
        
@@ -387,6 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
