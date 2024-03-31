@@ -291,8 +291,8 @@ function writePhotos() {
     for (var i = 0; i < hiddenSourceItems.length; i++) {
         // Extract the desired elements. Adjust the selectors based on your actual structure.
 
-        extractImg = hiddenSourceItems[i].querySelector('img').src; // Adjust the selector as needed
-        extractCaption = hiddenSourceItems[i].querySelector('.hidden-caption').innerText; // Adjust the selector as needed
+        var extractImg = hiddenSourceItems[i].querySelector('img').src; // Adjust the selector as needed
+        var extractCaption = hiddenSourceItems[i].querySelector('.hidden-caption').innerText; // Adjust the selector as needed
 
         console.log(extractImg);
         console.log(extractCaption);
@@ -303,12 +303,13 @@ function writePhotos() {
         newCard.setAttribute('role', 'listitem');
 
 
-        console.log(newCard);
+       // console.log(newCard);
 
 
         // Add the header if it exists
         if (extractImg) {
             var imgElement = newCard.querySelector('img');
+       //     console.log('check 8: '+imgElement);
             imgElement.src = extractImg;
             imgElement.alt = 'cms image';
         }
@@ -389,6 +390,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
