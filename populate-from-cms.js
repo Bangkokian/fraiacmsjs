@@ -280,7 +280,7 @@ function writePhotos() {
 
     console.log('items length: '+hiddenSourceItems.length);
 
-    console.log("checkpoint 5");
+    console.log("checkpoint 7");
 
 
 
@@ -387,6 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
