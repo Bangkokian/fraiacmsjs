@@ -308,7 +308,7 @@ function writePhotos() {
         // Add the header if it exists
         if (extractImg) {
             var imgElement = newCard.querySelector('img');
-            console.log(imgElement);
+            console.log('check 8: '+imgElement);
             imgElement.src = extractImg;
             imgElement.alt = 'cms image';
         }
@@ -389,45 +389,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
