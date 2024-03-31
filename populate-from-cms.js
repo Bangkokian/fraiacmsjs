@@ -307,13 +307,15 @@ function writePhotos() {
 
         // Add the header if it exists
         if (extractImg) {
-            newCard.querySelector('img').src = extractImg;
-            newCard.querySelector('img').alt = 'cms image';
+            var imgElement = newCard.querySelector('img');
+            console.log(imgElement);
+            imgElement.src = extractImg;
+            imgElement.alt = 'cms image';
         }
 
         // Add the text box if it exists
         if (extractCaption) {
-            newCard.querySelector('gallery-marquee_text').innerText = extractCaption;
+            newCard.querySelector('.gallery-marquee_text').innerText = extractCaption;
         }
 
        
@@ -387,6 +389,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
 
 
 
