@@ -243,6 +243,23 @@ function writePhotos() {
      var collectionListToFill = document.querySelector('#PhotoMarqueeHolder');
     console.log('collectionListToFill: '+collectionListToFill);
 
+
+
+//try this
+    // Select all elements with the class 'gallery-marquee_list'
+var elements = document.querySelectorAll('.gallery-marquee_list');
+
+// Loop through the NodeList and remove each element from its parent
+elements.forEach(function(element) {
+    element.parentNode.removeChild(element);
+});
+// end try
+
+
+
+
+
+
      var hiddenSource = document.getElementById('hiddenSource-Photos');
      console.log('hiddenSource: '+hiddenSource);
 
