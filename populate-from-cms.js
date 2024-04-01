@@ -105,6 +105,7 @@ function writeSolutionsServices() {
         var newCard = templateCard.cloneNode(true);
         newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
         newCard.setAttribute('role', 'listitem');
+        newCard.setAttribute('data-update',"cms");
 
 
 
