@@ -391,7 +391,7 @@ function writeDropdowns() {
         console.log("menu-item: "+extractMenuItem);
         console.log("menu-url: "+extractMenuURL);
 
-        var newMenuItem = '<a href="'+extractMenuURL+'" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
+        var newMenuItem = '<a href="'+extractMenuURL+'" data-update="cms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
         newMenuList1 += newMenuItem;
     }
 
@@ -419,7 +419,7 @@ function writeDropdowns() {
             console.log("dd2 menu-item: "+extractMenuItem);
             console.log("dd2 menu-url: "+extractMenuURL);
 
-            var newMenuItem = '<a href="'+extractMenuURL+'" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
+            var newMenuItem = '<a href="'+extractMenuURL+'" data-update="cms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
             newMenuList2 += newMenuItem;
         }
 
