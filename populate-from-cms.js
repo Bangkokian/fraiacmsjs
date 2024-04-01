@@ -405,7 +405,7 @@ function writeDropdowns() {
     // WRITE THE SECOND DROPDOWN
 
 
-      var hiddenSource = document.getElementById("collection-usecases");
+      var hiddenSource = document.getElementById("hiddenSource-UseCases");
       var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
        var newMenuList2 ='';
