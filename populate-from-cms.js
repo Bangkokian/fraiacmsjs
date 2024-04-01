@@ -102,7 +102,7 @@ function writeSolutionsServices() {
         var newCard = templateCard.cloneNode(true);
         newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
         newCard.setAttribute('role', 'listitem');
-
+        newCard.setAttribute('data-upate', 'fraiacms');
 
 
         // Add the header if it exists
@@ -124,12 +124,12 @@ function writeSolutionsServices() {
         collectionListToFill.appendChild(newCard);
 
         if (extractServicesSolutions != null) {
-            if (extractServicesSolutions.toLowerCase() == "services") {
+            if (extractServicesSolutions.toLowerCase() == "service") {
                 console.log("Adding to services tab: "+extractHeader);
                 document.getElementById("servicesMask").appendChild(newCard);
             }
 
-            if (extractServicesSolutions.toLowerCase() == "solutions") {
+            if (extractServicesSolutions.toLowerCase() == "solution") {
                 console.log("Adding to solutions tab: "+extractHeader);
                 document.getElementById("solutionsMask").appendChild(newCard);
             }
@@ -348,7 +348,7 @@ function writePhotos() {
             var imgElement = newCard.querySelector('img');
        //     console.log('check 8: '+imgElement);
             imgElement.src = extractImg;
-            imgElement.alt = 'cms image';
+            imgElement.alt = 'fraiacms image';
             imgElement.id = '';
             imgElement.srcset = '';
         }
@@ -417,7 +417,7 @@ function writeDropdowns() {
         console.log("menu-item: "+extractMenuItem);
         console.log("menu-url: "+extractMenuURL);
 
-        var newMenuItem = '<a href="'+extractMenuURL+'" data-update="cms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
+        var newMenuItem = '<a href="'+extractMenuURL+'" data-update="fraiacms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
         newMenuList1 += newMenuItem;
     }
 
@@ -445,7 +445,7 @@ function writeDropdowns() {
             console.log("dd2 menu-item: "+extractMenuItem);
             console.log("dd2 menu-url: "+extractMenuURL);
 
-            var newMenuItem = '<a href="'+extractMenuURL+'" data-update="cms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
+            var newMenuItem = '<a href="'+extractMenuURL+'" data-update="fraiacms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
             newMenuList2 += newMenuItem;
         }
 
