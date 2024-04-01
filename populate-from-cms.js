@@ -3,12 +3,15 @@
 
 
 
-// DEV NOTE:
+// WHAT IS THIS
 // Populate native Webflow slider with CMS content.
 // Because the native Webflow slider doesn't populate dynamically with CMS content we use this workaround for FRAIA:
 // The CMS data populates into hidden elements below the page footer. This javascript then reads those hidden elements
 // and copies them into the native Webflow slider.
 // -James
+
+
+// NOTE: Changing class or ID names on the webflow UI may break this script.
 
 
 
@@ -335,12 +338,73 @@ function writePhotos() {
         collectionListToFill.appendChild(newCard);
     }
 
-  
+
 
 
     // Here, you might need to reinitialize or refresh your slider as mentioned earlier
     Webflow.require('slider').redraw();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function writeDropdowns() {
+    console.log('Checkpoint 8');
+
+
+     // 1. MAKE A COPY AS templateCopy
+
+     var DropDown1 = document.querySelector('.dropdown-list_wrapper');
+     var DropDown2 = document.querySelector('.dropdown-list_wrapper2');
+
+
+     // remove existing links created in the Designer
+     Dropdown1.innerHTML = '';
+     DropDown2.innerHTML = '';
+
+
+     var hiddenSource = document.getElementById("collection-solutions");
+     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
+
+
+    // COPY THE CONTENTS FROM THE HIDDEN SOURCE
+
+
+
+     var newMenuList1 ='';
+    // Loop through each item in the collection
+   // Loop through each item in the collection
+    for (var i = 0; i < hiddenSourceItems.length; i++) {
+        var item = hiddenSourceItems[i]; // Define item for the current iteration
+        var extractMenuItem = item.querySelector('div').textContent;
+        var extractMenuURL = item.querySelector('a').href;
+
+        console.log(extractMenuItem);
+        console.log(extractMenuURL);
+
+        var newMenuItem = '<a href="'+extractMenuURL+'" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
+        newMenuList1 += newMenuItem;
+    }
+
+
+    DropDown1.innerHTML = newMenuList1;
+    
+
+
+
+}
+
+
 
 
 
