@@ -89,7 +89,7 @@ function writeSolutionsServices() {
         var extractHeader = hiddenSourceItems[i].querySelector('h1').innerText; // Adjust the selector as needed
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; // Adjust the selector as needed
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
-        var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution'); // Value is either "Services" or "Solutions"
+        var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution').innerText; // Value is either "Services" or "Solutions"
 
         console.log(extractHeader);
         console.log(extractSummary);
