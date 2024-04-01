@@ -123,14 +123,16 @@ function writeSolutionsServices() {
         // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
 
-        if (extractServicesSolutions.toLowerCase() == "services") {
-            console.log("Adding to services tab: "+extractHeader);
-            document.getElementById("servicesMask").appendChild(newCard);
-        }
+        if (extractServicesSolutions != null) {
+            if (extractServicesSolutions.toLowerCase() == "services") {
+                console.log("Adding to services tab: "+extractHeader);
+                document.getElementById("servicesMask").appendChild(newCard);
+            }
 
-        if (extractServicesSolutions.toLowerCase() == "solutions") {
-            console.log("Adding to solutions tab: "+extractHeader);
-            document.getElementById("solutionsMask").appendChild(newCard);
+            if (extractServicesSolutions.toLowerCase() == "solutions") {
+                console.log("Adding to solutions tab: "+extractHeader);
+                document.getElementById("solutionsMask").appendChild(newCard);
+            }
         }
 
     }
