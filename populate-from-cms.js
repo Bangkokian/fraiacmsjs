@@ -15,8 +15,12 @@
 
 
 
+function consoleLog(ctext) { 
+    // console.log(ctext); // uncomment for testing
+}
 
-console.log('Checkpoint 1');
+
+consoleLog('Checkpoint 1');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,21 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function writeSolutionsServices() {
-    console.log('Checkpoint 2');
+    consoleLog('Checkpoint 2');
 
 
      // 1. MAKE A COPY AS templateCopy
 
      var collectionListToFill = document.querySelector('#ProductSlideHolder');
-    console.log('collectionListToFill: '+collectionListToFill);
+    consoleLog('collectionListToFill: '+collectionListToFill);
 
 
      var hiddenSource = document.getElementById('hiddenSource-ProductsServices');
-     console.log('hiddenSource: '+hiddenSource);
+     consoleLog('hiddenSource: '+hiddenSource);
 
     // Select the first instance of .product-slide within #ProductSlideHolder
     var templateCard = collectionListToFill.querySelector('.product-slide');
-    console.log
+    consoleLog
     var templateCopy = templateCard.cloneNode(true);
 
     // Check if both elements exist
@@ -54,7 +58,7 @@ function writeSolutionsServices() {
         return;
     } else {
     
-    console.log("Elements ok");
+    consoleLog("Elements ok");
     }
     
     
@@ -73,10 +77,10 @@ function writeSolutionsServices() {
 
     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
-    console.log('items length: '+hiddenSourceItems.length);
+    consoleLog('items length: '+hiddenSourceItems.length);
 
 
-    console.log("checkpoint 3");
+    consoleLog("checkpoint 3");
 
 
 
@@ -91,10 +95,10 @@ function writeSolutionsServices() {
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
         var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution').innerText; // Value is either "Services" or "Solutions"
 
-        console.log(extractHeader);
-        console.log(extractSummary);
-        console.log(extractHref);
-        console.log("cat: "+extractServicesSolutions);
+        consoleLog(extractHeader);
+        consoleLog(extractSummary);
+        consoleLog(extractHref);
+        consoleLog("cat: "+extractServicesSolutions);
 
 
 
@@ -125,12 +129,12 @@ function writeSolutionsServices() {
 
         if (extractServicesSolutions != null) {
             if (extractServicesSolutions.toLowerCase() == "service") {
-                console.log("Adding to services tab: "+extractHeader);
+                consoleLog("Adding to services tab: "+extractHeader);
                // document.getElementById("servicesMask").appendChild(newCard);
             }
 
             if (extractServicesSolutions.toLowerCase() == "solution") {
-                console.log("Adding to solutions tab: "+extractHeader);
+                consoleLog("Adding to solutions tab: "+extractHeader);
                // document.getElementById("solutionsMask").appendChild(newCard);
             }
         }
@@ -159,20 +163,20 @@ function writeSolutionsServices() {
 
 
 function writeIndustryUseCases() {
-    console.log('Checkpoint 4');
+    consoleLog('Checkpoint 4');
 
 
      // 1. MAKE A COPY AS templateCopy
 
      var collectionListToFill = document.querySelector('#IndustrySlideHolder');
-    console.log('collectionListToFill: '+collectionListToFill);
+    consoleLog('collectionListToFill: '+collectionListToFill);
 
      var hiddenSource = document.getElementById('hiddenSource-UseCases');
-     console.log('hiddenSource: '+hiddenSource);
+     consoleLog('hiddenSource: '+hiddenSource);
 
     // Select the first instance of .product-slide within #ProductSlideHolder
     var templateCard = collectionListToFill.querySelector('.product-slide');
-    console.log
+    consoleLog
     var templateCopy = templateCard.cloneNode(true);
 
     // Check if both elements exist
@@ -181,7 +185,7 @@ function writeIndustryUseCases() {
         return;
     } else {
     
-    console.log("UC elements ok");
+    consoleLog("UC elements ok");
     }
     
     
@@ -200,10 +204,10 @@ function writeIndustryUseCases() {
 
     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
-    console.log('items length: '+hiddenSourceItems.length);
+    consoleLog('items length: '+hiddenSourceItems.length);
 
 
-    console.log("checkpoint 5");
+    consoleLog("checkpoint 5");
 
 
 
@@ -217,9 +221,9 @@ function writeIndustryUseCases() {
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; // Adjust the selector as needed
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
 
-        console.log(extractHeader);
-        console.log(extractSummary);
-        console.log(extractHref);
+        consoleLog(extractHeader);
+        consoleLog(extractSummary);
+        consoleLog(extractHref);
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
@@ -264,13 +268,13 @@ function writeIndustryUseCases() {
 
 
 function writePhotos() {
-    console.log('Checkpoint 6');
+    consoleLog('Checkpoint 6');
 
 
      // 1. MAKE A COPY AS templateCopy
 
      var collectionListToFill = document.querySelector('#PhotoMarqueeHolder');
-    console.log('collectionListToFill: '+collectionListToFill);
+    consoleLog('collectionListToFill: '+collectionListToFill);
 
 
 
@@ -281,7 +285,7 @@ function writePhotos() {
 
 
      var hiddenSource = document.getElementById('hiddenSource-Photos');
-     console.log('hiddenSource: '+hiddenSource);
+     consoleLog('hiddenSource: '+hiddenSource);
 
     // Select the first instance of .product-slide within #ProductSlideHolder
     var templateCard = collectionListToFill.querySelector('.gallery-marquee_image-wrapper');
@@ -293,7 +297,7 @@ function writePhotos() {
         return;
     } else {
     
-    console.log("UC elements ok");
+    consoleLog("UC elements ok");
     }
     
     
@@ -315,9 +319,9 @@ function writePhotos() {
 
     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
-    console.log('items length: '+hiddenSourceItems.length);
+    consoleLog('items length: '+hiddenSourceItems.length);
 
-    console.log("checkpoint 7");
+    consoleLog("checkpoint 7");
 
 
 
@@ -331,8 +335,8 @@ function writePhotos() {
         var extractImg = hiddenSourceItems[i].querySelector('img').src; // Adjust the selector as needed
         var extractCaption = hiddenSourceItems[i].querySelector('.hidden-caption').innerText; // Adjust the selector as needed
 
-        console.log(extractImg);
-        console.log(extractCaption);
+        consoleLog(extractImg);
+        consoleLog(extractCaption);
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
@@ -340,13 +344,13 @@ function writePhotos() {
         newCard.setAttribute('role', 'listitem');
 
 
-       // console.log(newCard);
+       // consoleLog(newCard);
 
 
         // Add the header if it exists
         if (extractImg) {
             var imgElement = newCard.querySelector('img');
-       //     console.log('check 8: '+imgElement);
+       //     consoleLog('check 8: '+imgElement);
             imgElement.src = extractImg;
             imgElement.alt = 'fraiacms image';
             imgElement.id = '';
@@ -385,7 +389,7 @@ function writePhotos() {
 
 
 function writeDropdowns() {
-    console.log('Checkpoint 8');
+    consoleLog('Checkpoint 8');
 
 
      // 1. MAKE A COPY AS templateCopy
@@ -414,8 +418,8 @@ function writeDropdowns() {
         var extractMenuItem = item.querySelector('div').textContent;
         var extractMenuURL = item.querySelector('a').href;
 
-        console.log("menu-item: "+extractMenuItem);
-        console.log("menu-url: "+extractMenuURL);
+        consoleLog("menu-item: "+extractMenuItem);
+        consoleLog("menu-url: "+extractMenuURL);
 
         var newMenuItem = '<a href="'+extractMenuURL+'" data-update="fraiacms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
         newMenuList1 += newMenuItem;
@@ -442,8 +446,8 @@ function writeDropdowns() {
             var extractMenuItem = item.querySelector('h1').textContent;
             var extractMenuURL = item.querySelector('a').href;
 
-            console.log("dd2 menu-item: "+extractMenuItem);
-            console.log("dd2 menu-url: "+extractMenuURL);
+            consoleLog("dd2 menu-item: "+extractMenuItem);
+            consoleLog("dd2 menu-url: "+extractMenuURL);
 
             var newMenuItem = '<a href="'+extractMenuURL+'" data-update="fraiacms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
             newMenuList2 += newMenuItem;
