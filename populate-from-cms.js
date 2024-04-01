@@ -127,13 +127,7 @@ function writeSolutionsServices() {
         // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
 
-        if (extractServicesSolutions.toLowerCase() == "services") {
-            document.getElementById("servicesMask").appendChild(newCard);
-        }
-
-        if (extractServicesSolutions.toLowerCase() == "solutions") {
-            document.getElementById("solutionsMask").appendChild(newCard);
-        }
+       
 
 
 
