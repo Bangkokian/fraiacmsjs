@@ -126,12 +126,12 @@ function writeSolutionsServices() {
         if (extractServicesSolutions != null) {
             if (extractServicesSolutions.toLowerCase() == "service") {
                 console.log("Adding to services tab: "+extractHeader);
-                document.getElementById("servicesMask").appendChild(newCard);
+               // document.getElementById("servicesMask").appendChild(newCard);
             }
 
             if (extractServicesSolutions.toLowerCase() == "solution") {
                 console.log("Adding to solutions tab: "+extractHeader);
-                document.getElementById("solutionsMask").appendChild(newCard);
+               // document.getElementById("solutionsMask").appendChild(newCard);
             }
         }
 
