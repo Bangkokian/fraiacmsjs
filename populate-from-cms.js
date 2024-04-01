@@ -369,7 +369,7 @@ function writeDropdowns() {
 
 
      // remove existing links created in the Designer
-     Dropdown1.innerHTML = '';
+     DropDown1.innerHTML = '';
      DropDown2.innerHTML = '';
 
 
