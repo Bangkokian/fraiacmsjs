@@ -82,8 +82,7 @@ function writeSolutionsServices() {
 
 
     // Now clear out the tabs completely
-    document.getElementById("solutionsMask").innerHTML = '';
-    document.getElementById("servicesMask").innerHTML = '';
+  
 
 
 
