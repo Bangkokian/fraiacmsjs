@@ -364,8 +364,8 @@ function writeDropdowns() {
 
      // 1. MAKE A COPY AS templateCopy
 
-     var DropDown1 = document.querySelector('.dropdown-list_wrapper');
-     var DropDown2 = document.querySelector('.dropdown-list_wrapper2');
+     var DropDown1 = document.querySelector('.dropdown-links_wrapper');
+     var DropDown2 = document.querySelector('.dropdown-links_wrapper2');
 
 
      // remove existing links created in the Designer
