@@ -94,6 +94,9 @@ function writeSolutionsServices() {
         console.log(extractHeader);
         console.log(extractSummary);
         console.log(extractHref);
+        console.log("cat: "+extractServicesSolutions);
+
+
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
