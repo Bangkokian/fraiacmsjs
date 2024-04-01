@@ -21,7 +21,7 @@ console.log('Checkpoint 1');
 
 document.addEventListener('DOMContentLoaded', function() {
        writeDropdowns();
-       writeProductsServices();
+       writeSolutionsServices();
        writeIndustryUseCases();
        writePhotos();
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function writeProductsServices() {
+function writeSolutionsServices() {
     console.log('Checkpoint 2');
 
 
@@ -38,6 +38,7 @@ function writeProductsServices() {
 
      var collectionListToFill = document.querySelector('#ProductSlideHolder');
     console.log('collectionListToFill: '+collectionListToFill);
+
 
      var hiddenSource = document.getElementById('hiddenSource-ProductsServices');
      console.log('hiddenSource: '+hiddenSource);
@@ -80,7 +81,14 @@ function writeProductsServices() {
 
 
 
-    // COPY THE CONTENTS FROM THE HIDDEN SOURCE
+    // Now clear out the tabs completely
+    document.getElementById("solutionsMask").innerHTML = '';
+    document.getElementById("servicesMask").innerHTML = '';
+
+
+
+
+    // COPY THE CONTENTS FROM THE HIDDEN SOURCE. (THIS WRITES THE ALL TAB)
 
     // Loop through each item in the collection
     for (var i = 0; i < hiddenSourceItems.length; i++) {
@@ -118,7 +126,21 @@ function writeProductsServices() {
 
         // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
+
+        if (extractServicesSolutions.toLowerCase() == "services") {
+            document.getElementById("servicesMask").appendChild(newCard);
+        }
+
+        if (extractServicesSolutions.toLowerCase() == "solutions") {
+            document.getElementById("solutionsMask").appendChild(newCard);
+        }
+
+
+
     }
+
+
+
 
     // Here, you might need to reinitialize or refresh your slider as mentioned earlier
     Webflow.require('slider').redraw();
