@@ -373,11 +373,13 @@ function writeDropdowns() {
      DropDown2.innerHTML = '';
 
 
-     var hiddenSource = document.getElementById("collection-solutions");
-     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
 
     // WRITE THE FIRST DROPDONW
+
+     var hiddenSource = document.getElementById("collection-solutions");
+     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
+
 
      var newMenuList1 ='';
    // Loop through each item in the collection
@@ -393,16 +395,36 @@ function writeDropdowns() {
         newMenuList1 += newMenuItem;
     }
 
-
     DropDown1.innerHTML = newMenuList1;
+
+
+
 
 
 
     // WRITE THE SECOND DROPDOWN
 
 
-    
+      var hiddenSource = document.getElementById("collection-usecases");
+      var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
+       var newMenuList2 ='';
+
+       // Loop through each item in the collection
+        for (var i = 0; i < hiddenSourceItems.length; i++) {
+            var item = hiddenSourceItems[i]; // Define item for the current iteration
+            var extractMenuItem = item.querySelector('h1').textContent;
+            var extractMenuURL = item.querySelector('a').href;
+
+            console.log("dd2 menu-item: "+extractMenuItem);
+            console.log("dd2 menu-url: "+extractMenuURL);
+
+            var newMenuItem = '<a href="'+extractMenuURL+'" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
+            newMenuList2 += newMenuItem;
+        }
+
+
+    DropDown2.innerHTML = newMenuList2;
 
 
 }
