@@ -81,12 +81,6 @@ function writeSolutionsServices() {
 
 
 
-    // Now clear out the tabs completely
-  
-
-
-
-
     // COPY THE CONTENTS FROM THE HIDDEN SOURCE. (THIS WRITES THE ALL TAB)
 
     // Loop through each item in the collection
@@ -105,7 +99,6 @@ function writeSolutionsServices() {
         var newCard = templateCard.cloneNode(true);
         newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
         newCard.setAttribute('role', 'listitem');
-        newCard.setAttribute('data-update',"cms");
 
 
 
@@ -126,12 +119,13 @@ function writeSolutionsServices() {
 
         // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
-
-       
-
-
-
     }
+
+
+
+
+
+
 
 
 
