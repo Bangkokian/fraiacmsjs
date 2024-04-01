@@ -377,20 +377,17 @@ function writeDropdowns() {
      var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
 
-    // COPY THE CONTENTS FROM THE HIDDEN SOURCE
-
-
+    // WRITE THE FIRST DROPDONW
 
      var newMenuList1 ='';
-    // Loop through each item in the collection
    // Loop through each item in the collection
     for (var i = 0; i < hiddenSourceItems.length; i++) {
         var item = hiddenSourceItems[i]; // Define item for the current iteration
         var extractMenuItem = item.querySelector('div').textContent;
         var extractMenuURL = item.querySelector('a').href;
 
-        console.log(extractMenuItem);
-        console.log(extractMenuURL);
+        console.log("menu-item: "+extractMenuItem);
+        console.log("menu-url: "+extractMenuURL);
 
         var newMenuItem = '<a href="'+extractMenuURL+'" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
         newMenuList1 += newMenuItem;
@@ -398,6 +395,12 @@ function writeDropdowns() {
 
 
     DropDown1.innerHTML = newMenuList1;
+
+
+
+    // WRITE THE SECOND DROPDOWN
+
+
     
 
 
