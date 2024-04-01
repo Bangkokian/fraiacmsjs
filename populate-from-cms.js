@@ -20,7 +20,7 @@ console.log('Checkpoint 1');
 
 
 document.addEventListener('DOMContentLoaded', function() {
-
+       writeDropdowns();
        writeProductsServices();
        writeIndustryUseCases();
        writePhotos();
