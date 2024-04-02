@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function writeDropdowns() {
-    consoleLog('Checkpoint 8');
-
+     console.log("Writing dropdowns");
 
      // 1. MAKE A COPY AS templateCopy
 
@@ -40,8 +39,7 @@ function writeDropdowns() {
         var extractMenuItem = item.querySelector('div').textContent;
         var extractMenuURL = item.querySelector('a').href;
 
-        consoleLog("menu-item: "+extractMenuItem);
-        consoleLog("menu-url: "+extractMenuURL);
+      
 
         var newMenuItem = '<a href="'+extractMenuURL+'" data-update="fraiacms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
         newMenuList1 += newMenuItem;
@@ -68,8 +66,7 @@ function writeDropdowns() {
             var extractMenuItem = item.querySelector('h1').textContent;
             var extractMenuURL = item.querySelector('a').href;
 
-            consoleLog("dd2 menu-item: "+extractMenuItem);
-            consoleLog("dd2 menu-url: "+extractMenuURL);
+           
 
             var newMenuItem = '<a href="'+extractMenuURL+'" data-update="fraiacms" class="navbar1_dropdown-link w-dropdown-link">'+extractMenuItem+'</a>';
             newMenuList2 += newMenuItem;
