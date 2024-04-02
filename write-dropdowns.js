@@ -1,5 +1,12 @@
 
 // This populates the dropdowns in the main menu.  
+// Used on pages other than the homepage with the header menu
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+       writeDropdowns();
+});
 
 
 
@@ -75,4 +82,3 @@ function writeDropdowns() {
 }
 
 
-writeDropdowns();
