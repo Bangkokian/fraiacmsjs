@@ -477,7 +477,7 @@ function writeInterviews() {
         // Directly extract the 'url' query parameter, which contains the YouTube URL
         var extractURL = srcUrl.searchParams.get('url');
 
-        extractURL = decodeURIComponent(youtubeUrl);
+        extractURL = decodeURIComponent(extractURL);
 
 
 
