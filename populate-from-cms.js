@@ -460,6 +460,8 @@ function writeInterviews() {
         var extractThumbnail = hiddenSourceItems[i].querySelector('.hidden-thumbnail').innerText; // Adjust the selector as needed
         var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML; // Assuming the button is an <a> element
 
+        console.log(extractVideo);
+
         consoleLog(extractHeader);
         consoleLog(extractSummary);
 
