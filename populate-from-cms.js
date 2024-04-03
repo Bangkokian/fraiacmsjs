@@ -119,7 +119,6 @@ function writeSolutionsServices() {
 
 
 
-    consoleLog('items length: '+hiddenSourceItemsArray.length);
 
 
     consoleLog("checkpoint 3");
