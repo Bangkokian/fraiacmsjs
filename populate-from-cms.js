@@ -482,7 +482,7 @@ function writeInterviews() {
 
 
 
-        console.log(extractVideo);
+        console.log('Youtube URL: '+extractURL);
 
         consoleLog(extractHeader);
         consoleLog(extractSummary);
