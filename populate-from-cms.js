@@ -77,7 +77,9 @@ function writeSolutionsServices() {
 
     //var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
-    // ALLOW PINNED ITEMS
+
+
+    // 3.
     // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
     // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
 
@@ -245,7 +247,48 @@ function writeIndustryUseCases() {
     });
 
 
-    var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+    // var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+
+
+
+
+
+
+    // 3. SORT INDUSTRIES
+     var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
+
+        hiddenSourceItems.sort(function(a, b) {
+          // Sorting logic remains the same
+          const aValue = a.querySelector('.pin-order').innerText;
+          const bValue = b.querySelector('.pin-order').innerText;
+
+          const aNum = parseInt(aValue, 10);
+          const bNum = parseInt(bValue, 10);
+
+          if ([1, 2, 3].includes(aNum) && [1, 2, 3].includes(bNum)) {
+            return aNum - bNum;
+          } else if ([1, 2, 3].includes(aNum)) {
+            return -1;
+          } else if ([1, 2, 3].includes(bNum)) {
+            return 1;
+          }
+          return 0;
+        });
+
+        // Re-insert sorted elements into their parent container
+        hiddenSourceItems.forEach(function(item) {
+          // This moves each item to the end of the parent container, effectively sorting them
+          hiddenSource.appendChild(item);
+        });
+
+        // If you need a NodeList of the sorted items for further operations
+        var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+
+
+
+
+
+
 
     consoleLog('items length: '+hiddenSourceItems.length);
 
@@ -360,7 +403,51 @@ function writePhotos() {
     });
 
 
-    var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
+    // var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
+
+
+
+ // 3. SORT INDUSTRIES
+     var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
+
+        hiddenSourceItems.sort(function(a, b) {
+          // Sorting logic remains the same
+          const aValue = a.querySelector('.pin-order').innerText;
+          const bValue = b.querySelector('.pin-order').innerText;
+
+          const aNum = parseInt(aValue, 10);
+          const bNum = parseInt(bValue, 10);
+
+          if ([1, 2, 3].includes(aNum) && [1, 2, 3].includes(bNum)) {
+            return aNum - bNum;
+          } else if ([1, 2, 3].includes(aNum)) {
+            return -1;
+          } else if ([1, 2, 3].includes(bNum)) {
+            return 1;
+          }
+          return 0;
+        });
+
+        // Re-insert sorted elements into their parent container
+        hiddenSourceItems.forEach(function(item) {
+          // This moves each item to the end of the parent container, effectively sorting them
+          hiddenSource.appendChild(item);
+        });
+
+        // If you need a NodeList of the sorted items for further operations
+        var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+
+
+
+
+
+
+
+
+
+
+
+
 
     consoleLog('items length: '+hiddenSourceItems.length);
 
