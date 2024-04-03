@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
        writeSolutionsServices();
        writeIndustryUseCases();
        writePhotos();
+       writeInterviews();
 
 });
 
