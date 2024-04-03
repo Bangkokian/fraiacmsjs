@@ -458,6 +458,8 @@ function writeInterviews() {
         var extractHeader = hiddenSourceItems[i].querySelector('.hidden-title').innerText; 
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
         var extractThumbnail = hiddenSourceItems[i].querySelector('.hidden-thumbnail').src; 
+        var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
+
        // var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
 
 
@@ -493,6 +495,11 @@ function writeInterviews() {
         if (extractThumbnail) {
             newCard.querySelector('.interview-image').src = extractThumbnail;
         }
+
+        if (extractHref) {
+            newCard.querySelector('a').href = extractHref;
+        }
+
 
 
        
