@@ -462,7 +462,6 @@ function writeInterviews() {
 
         consoleLog(extractHeader);
         consoleLog(extractSummary);
-        consoleLog(extractHref);
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
