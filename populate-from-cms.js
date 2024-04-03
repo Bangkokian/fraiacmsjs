@@ -458,11 +458,10 @@ function writeInterviews() {
         // Extract the desired elements. Adjust the selectors based on your actual structure.
         var extractHeader = hiddenSourceItems[i].querySelector('.hidden-title').innerText; 
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
-        var extractThumbnail = hiddenSourceItems[i].querySelector('.hidden-thumbnail').src; 
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Links to the FRAIA page with the video on it
         var hiddenYoutubeURL = hiddenSourceItems[i].querySelector('.hidden-youtubeurl').innerText;
 
-        extractThumbnail = getThumbnail(hiddenYoutubeURL);
+        var extractThumbnail = getThumbnail(hiddenYoutubeURL); // Gets thumbnail img directly from Youtube 
         
 
        // var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
