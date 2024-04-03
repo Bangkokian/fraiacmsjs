@@ -13,6 +13,8 @@
 
 // NOTE: Changing class or ID names on the webflow UI may break this script.
 
+
+
 console.log("fraiacmsjs .07"); 
 
 function consoleLog(ctext) { 
@@ -20,7 +22,6 @@ function consoleLog(ctext) {
 }
 
 
-consoleLog('Checkpoint 1');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -36,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function writeSolutionsServices() {
-    consoleLog('Checkpoint 2');
 
 
      // 1. MAKE A COPY AS templateCopy
@@ -65,7 +65,6 @@ function writeSolutionsServices() {
     
 
     // 2. CLEAR OUT CollectionListToFill. It should be empty
-
     // Select all instances of .product-slide within collectionListToFill
     // and clear them out. We already have the template.
     var allStartingCards = collectionListToFill.querySelectorAll('.product-slide');
@@ -76,7 +75,6 @@ function writeSolutionsServices() {
     });
 
 
-    //var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
 
     // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
@@ -122,15 +120,7 @@ function writeSolutionsServices() {
 
 
 
-
-
-
-
     consoleLog('items length: '+hiddenSourceItems.length);
-
-
-    consoleLog("checkpoint 3");
-
 
 
 
@@ -138,11 +128,10 @@ function writeSolutionsServices() {
 
     // Loop through each item in the collection
     for (var i = 0; i < hiddenSourceItems.length; i++) {
-        // Extract the desired elements. Adjust the selectors based on your actual structure.
-        var extractHeader = hiddenSourceItems[i].querySelector('h1').innerText; // Adjust the selector as needed
-        var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; // Adjust the selector as needed
-        var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
-        var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution').innerText; // Value is either "Services" or "Solutions"
+        var extractHeader = hiddenSourceItems[i].querySelector('h1').innerText; 
+        var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
+        var extractHref = hiddenSourceItems[i].querySelector('a').href;
+        var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution').innerText; 
         var extractPinOrder =  hiddenSourceItems[i].querySelector('.pin-order').innerText; // Value is 1,2,3 (anything else is unordered)
 
         consoleLog(extractHeader);
@@ -154,7 +143,7 @@ function writeSolutionsServices() {
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
-        newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
+        newCard.classList.add('w-dyn-item');
         newCard.setAttribute('role', 'listitem');
         newCard.setAttribute('data-upate', 'fraiacms');
 
@@ -174,7 +163,6 @@ function writeSolutionsServices() {
             newCard.querySelector('a').href = extractHref;
         }
 
-        // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
 
         if (extractServicesSolutions != null) {
@@ -192,10 +180,6 @@ function writeSolutionsServices() {
     }
 
 
-
-
-
-    // Here, you might need to reinitialize or refresh your slider as mentioned earlier
     Webflow.require('slider').redraw();
 }
 
@@ -246,7 +230,6 @@ function writeIndustryUseCases() {
     
 
     // 2. CLEAR OUT CollectionListToFill. It should be empty
-
     // Select all instances of .product-slide within collectionListToFill
     // and clear them out. We already have the template.
     var allStartingCards = collectionListToFill.querySelectorAll('.product-slide');
@@ -260,7 +243,7 @@ function writeIndustryUseCases() {
    // var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
    // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
-    // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
+   // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
 
 
      var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
@@ -292,8 +275,6 @@ function writeIndustryUseCases() {
 
 
 
-
-
         // If you need a NodeList of the sorted items for further operations
         var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
@@ -309,9 +290,9 @@ function writeIndustryUseCases() {
     // Loop through each item in the collection
     for (var i = 0; i < hiddenSourceItems.length; i++) {
         // Extract the desired elements. Adjust the selectors based on your actual structure.
-        var extractHeader = hiddenSourceItems[i].querySelector('h1').innerText; // Adjust the selector as needed
-        var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; // Adjust the selector as needed
-        var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
+        var extractHeader = hiddenSourceItems[i].querySelector('h1').innerText;
+        var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
+        var extractHref = hiddenSourceItems[i].querySelector('a').href;
 
         consoleLog(extractHeader);
         consoleLog(extractSummary);
@@ -319,7 +300,7 @@ function writeIndustryUseCases() {
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
-        newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
+        newCard.classList.add('w-dyn-item'); 
         newCard.setAttribute('role', 'listitem');
 
 
@@ -343,7 +324,7 @@ function writeIndustryUseCases() {
         collectionListToFill.appendChild(newCard);
     }
 
-    // Here, you might need to reinitialize or refresh your slider as mentioned earlier
+    
     Webflow.require('slider').redraw();
 }
 
@@ -407,7 +388,7 @@ function writeInterviews() {
    // var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
    // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
-    // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
+   // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
 
 
      var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
@@ -437,10 +418,6 @@ function writeInterviews() {
         });
 
 
-
-
-
-
         // If you need a NodeList of the sorted items for further operations
         var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
@@ -455,7 +432,6 @@ function writeInterviews() {
 
     // Loop through each item in the collection
     for (var i = 0; i < hiddenSourceItems.length; i++) {
-        // Extract the desired elements. Adjust the selectors based on your actual structure.
         var extractHeader = hiddenSourceItems[i].querySelector('.hidden-title').innerText; 
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Links to the FRAIA page with the video on it
@@ -464,7 +440,6 @@ function writeInterviews() {
         var extractThumbnail = getThumbnail(hiddenYoutubeURL); // Gets thumbnail img directly from Youtube 
         
 
-       // var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
 
 
 
@@ -480,7 +455,7 @@ function writeInterviews() {
 
         // Create a new container for the slide
         var newCard = templateCard.cloneNode(true);
-        newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
+        newCard.classList.add('w-dyn-item'); 
         newCard.setAttribute('role', 'listitem');
 
 
@@ -512,7 +487,6 @@ function writeInterviews() {
         collectionListToFill.appendChild(newCard);
     }
 
-    // Here, you might need to reinitialize or refresh your slider as mentioned earlier
     Webflow.require('slider').redraw();
 }
 
