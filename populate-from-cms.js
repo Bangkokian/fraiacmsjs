@@ -462,7 +462,7 @@ function writeInterviews() {
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Links to the FRAIA page with the video on it
         var hiddenYoutubeURL = hiddenSourceItems[i].querySelector('hidden-youtubeurl').innerText;
 
-        extractThumbnail = getThumbnail(hiddenyoutubeURL);
+        extractThumbnail = getThumbnail(hiddenYoutubeURL);
         
 
        // var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
