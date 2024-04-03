@@ -358,6 +358,171 @@ function writeIndustryUseCases() {
 
 
 
+
+
+
+
+
+
+function writeInterviews() {
+    consoleLog('Checkpoint 4');
+
+
+     // 1. MAKE A COPY AS templateCopy
+
+     var collectionListToFill = document.querySelector('#InterviewSlideHolder');
+    consoleLog('collectionListToFill: '+collectionListToFill);
+
+     var hiddenSource = document.getElementById('hiddenSource-Interviews');
+     consoleLog('hiddenSource: '+hiddenSource);
+
+    // Select the first instance of .product-slide within #ProductSlideHolder
+    var templateCard = collectionListToFill.querySelector('.product-slide');
+    var templateCopy = templateCard.cloneNode(true);
+
+    // Check if both elements exist
+    if (!collectionListToFill || !templateCard) {
+        console.error('FRAIA: Required elements not found.');
+        return;
+    } else {
+    
+    consoleLog("UC elements ok");
+    }
+    
+    
+
+    // 2. CLEAR OUT CollectionListToFill. It should be empty
+
+    // Select all instances of .product-slide within collectionListToFill
+    // and clear them out. We already have the template.
+    var allStartingCards = collectionListToFill.querySelectorAll('.product-slide');
+
+    // Loop through the NodeList and remove each element
+    allStartingCards.forEach(function(templateCard) {
+        templateCard.parentNode.removeChild(templateCard);
+    });
+
+
+   // var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+
+   // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
+    // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
+
+
+     var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
+
+        hiddenSourceItems.sort(function(a, b) {
+          // Sorting logic remains the same
+          const aValue = a.querySelector('.pin-order').innerText;
+          const bValue = b.querySelector('.pin-order').innerText;
+
+          const aNum = parseInt(aValue, 10);
+          const bNum = parseInt(bValue, 10);
+
+          if ([1, 2, 3].includes(aNum) && [1, 2, 3].includes(bNum)) {
+            return aNum - bNum;
+          } else if ([1, 2, 3].includes(aNum)) {
+            return -1;
+          } else if ([1, 2, 3].includes(bNum)) {
+            return 1;
+          }
+          return 0;
+        });
+
+        // Re-insert sorted elements into their parent container
+        hiddenSourceItems.forEach(function(item) {
+          // This moves each item to the end of the parent container, effectively sorting them
+          hiddenSource.appendChild(item);
+        });
+
+
+
+
+
+
+        // If you need a NodeList of the sorted items for further operations
+        var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+
+
+        console.log(hiddenSourceSortedItems);
+
+
+
+
+
+    // COPY THE CONTENTS FROM THE HIDDEN SOURCE
+
+    // Loop through each item in the collection
+    for (var i = 0; i < hiddenSourceItems.length; i++) {
+        // Extract the desired elements. Adjust the selectors based on your actual structure.
+        var extractHeader = hiddenSourceItems[i].querySelector('.hidden-title').innerText; // Adjust the selector as needed
+        var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; // Adjust the selector as needed
+        var extractThumbnail = hiddenSourceItems[i].querySelector('.hidden-thumbnail').innerText; // Adjust the selector as needed
+        var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML; // Assuming the button is an <a> element
+
+        consoleLog(extractHeader);
+        consoleLog(extractSummary);
+        consoleLog(extractHref);
+
+        // Create a new container for the slide
+        var newCard = templateCard.cloneNode(true);
+        newCard.classList.add('w-dyn-item'); // Add a class for the slide container if needed
+        newCard.setAttribute('role', 'listitem');
+
+
+
+        // Add the header if it exists
+        if (extractHeader) {
+            newCard.querySelector('h3').innerText = extractHeader;
+        }
+
+        // Add the text box if it exists
+        if (extractSummary) {
+            newCard.querySelector('.interview-card_text').innerText = extractSummary;
+        }
+
+        // Add the button URL as a new button element if it exists
+        if (extractThumbnail) {
+            newCard.querySelector('.interview-image').src = extractThumbnail;
+        }
+
+        // Append the newly created slideContainer to the slider
+        collectionListToFill.appendChild(newCard);
+    }
+
+    // Here, you might need to reinitialize or refresh your slider as mentioned earlier
+    Webflow.require('slider').redraw();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function writePhotos() {
     consoleLog('Checkpoint 6');
 
