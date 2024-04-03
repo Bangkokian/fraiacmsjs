@@ -75,16 +75,16 @@ function writeSolutionsServices() {
     });
 
 
-    var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+    //var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
 
     // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
     // Note: If there are duplicate numbers in the Fraia CMS, it will pin them all. eg: 1,1,2,3,3
 
 
-     var hiddenSourceItemsArray = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
+     var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
 
-        hiddenSourceItemsArray.sort(function(a, b) {
+        hiddenSourceItems.sort(function(a, b) {
           // Sorting logic remains the same
           const aValue = a.querySelector('.pin-order').innerText;
           const bValue = b.querySelector('.pin-order').innerText;
@@ -103,7 +103,7 @@ function writeSolutionsServices() {
         });
 
         // Re-insert sorted elements into their parent container
-        hiddenSourceItemsArray.forEach(function(item) {
+        hiddenSourceItems.forEach(function(item) {
           // This moves each item to the end of the parent container, effectively sorting them
           hiddenSource.appendChild(item);
         });
@@ -117,6 +117,7 @@ function writeSolutionsServices() {
         var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
 
+        console.log(hiddenSourceSortedItems);
 
 
 
