@@ -458,31 +458,9 @@ function writeInterviews() {
         var extractHeader = hiddenSourceItems[i].querySelector('.hidden-title').innerText; 
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
         var extractThumbnail = hiddenSourceItems[i].querySelector('.hidden-thumbnail').src; 
-        var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
+       // var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
 
 
-
-    // Then get the video URL from the above extractVideo innerHTML ... this gets used by webflow in an id element and not a data element for some odd reason.
-        var htmlString = extractVideo;
-        // Use DOMParser to parse the HTML string
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(htmlString, 'text/html');
-
-        // Query the iframe element
-        var iframe = doc.querySelector('iframe');
-        var src = iframe.getAttribute('src');
-
-        // Use URL and URLSearchParams to parse the iframe's src
-        var srcUrl = new URL(src, window.location.href);
-        // Directly extract the 'url' query parameter, which contains the YouTube URL
-        var extractURL = srcUrl.searchParams.get('url');
-
-        extractURL = decodeURIComponent(extractURL);
-
-
-
-
-        console.log('Youtube URL: '+extractURL);
 
         consoleLog(extractHeader);
         consoleLog(extractSummary);
@@ -517,19 +495,7 @@ function writeInterviews() {
         }
 
 
-        if (extractURL) {
-            const imgElement = newCard.querySelector('.interview-lightbox-link img'); // this is the play button
-            if (imgElement) { // Ensure the element exists
-                imgElement.setAttribute('data-url', extractURL); 
-                imgElement.setAttribute('id', extractURL);  // for some reason they store the url in the id 
-            }
-        }
-
-
-
-
-        
-
+       
 
         // Append the newly created slideContainer to the slider
         collectionListToFill.appendChild(newCard);
