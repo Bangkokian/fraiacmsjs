@@ -377,7 +377,7 @@ function writeInterviews() {
      consoleLog('hiddenSource: '+hiddenSource);
 
     // Select the first instance of .product-slide within #ProductSlideHolder
-    var templateCard = collectionListToFill.querySelector('.product-slide');
+    var templateCard = collectionListToFill.querySelector('.interview-slide');
     var templateCopy = templateCard.cloneNode(true);
 
     // Check if both elements exist
@@ -395,7 +395,7 @@ function writeInterviews() {
 
     // Select all instances of .product-slide within collectionListToFill
     // and clear them out. We already have the template.
-    var allStartingCards = collectionListToFill.querySelectorAll('.product-slide');
+    var allStartingCards = collectionListToFill.querySelectorAll('.interview-slide');
 
     // Loop through the NodeList and remove each element
     allStartingCards.forEach(function(templateCard) {
