@@ -459,7 +459,11 @@ function writeInterviews() {
         var extractHeader = hiddenSourceItems[i].querySelector('.hidden-title').innerText; 
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
         var extractThumbnail = hiddenSourceItems[i].querySelector('.hidden-thumbnail').src; 
-        var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
+        var extractHref = hiddenSourceItems[i].querySelector('a').href; // Links to the FRAIA page with the video on it
+        var hiddenYoutubeURL = hiddenSourceItems[i].querySelector('hidden-youtubeurl').innerText;
+
+        extractThumbnail = getThumbnail(hiddenyoutubeURL);
+        
 
        // var extractVideo = hiddenSourceItems[i].querySelector('.hidden-video').innerHTML;
 
@@ -528,7 +532,20 @@ function writeInterviews() {
 
 
 
+function getThumbnail(videoUrl) { // gets the youtube thumb for a video url
 
+     // Extract video ID from the video URL
+      const videoIdMatch = videoUrl.match(/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+      
+      if (videoIdMatch && videoIdMatch[1]) {
+        // Construct thumbnail URL using the extracted video ID
+        return `https://img.youtube.com/vi/${videoIdMatch[1]}/hqdefault.jpg`;
+      } else {
+        // Return a message if the video ID couldn't be extracted
+        return "Invalid YouTube video URL";
+      }
+
+}
 
 
 
