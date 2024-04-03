@@ -75,7 +75,7 @@ function writeSolutionsServices() {
     });
 
 
-    //var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+    var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
 
     // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
@@ -107,6 +107,11 @@ function writeSolutionsServices() {
           // This moves each item to the end of the parent container, effectively sorting them
           hiddenSource.appendChild(item);
         });
+
+
+
+
+
 
         // If you need a NodeList of the sorted items for further operations
         var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
