@@ -408,11 +408,64 @@ function writePhotos() {
     });
 
 
-    var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
+    //var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
-    consoleLog('items length: '+hiddenSourceItems.length);
+   
 
-    consoleLog("checkpoint 7");
+//--
+
+
+     var hiddenSourceItems = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
+
+        hiddenSourceItems.sort(function(a, b) {
+          // Sorting logic remains the same
+          const aValue = a.querySelector('.pin-order').innerText;
+          const bValue = b.querySelector('.pin-order').innerText;
+
+          const aNum = parseInt(aValue, 10);
+          const bNum = parseInt(bValue, 10);
+
+          if ([1, 2, 3].includes(aNum) && [1, 2, 3].includes(bNum)) {
+            return aNum - bNum;
+          } else if ([1, 2, 3].includes(aNum)) {
+            return -1;
+          } else if ([1, 2, 3].includes(bNum)) {
+            return 1;
+          }
+          return 0;
+        });
+
+        // Re-insert sorted elements into their parent container
+        hiddenSourceItems.forEach(function(item) {
+          // This moves each item to the end of the parent container, effectively sorting them
+          hiddenSource.appendChild(item);
+        });
+
+
+
+
+
+
+        // If you need a NodeList of the sorted items for further operations
+        var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
+
+
+        console.log(hiddenSourceSortedItems);
+
+
+
+//--
+
+
+
+
+
+
+
+
+
+
+
 
 
 
