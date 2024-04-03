@@ -13,7 +13,7 @@
 
 // NOTE: Changing class or ID names on the webflow UI may break this script.
 
-console.log("fraiacmsjs .07"); 
+console.log("fraiacmsjs .06"); 
 
 function consoleLog(ctext) { 
     // console.log(ctext); // uncomment for testing
@@ -77,49 +77,6 @@ function writeSolutionsServices() {
 
     var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]');
 
-
-    // SORT THE ITEMS IN THE ITEMS BY THE VALUE OF .pin-order (which is 1, 2 or 3)
-    // Note: If there are duplicate numbers, it will pin them all. eg: 1,1,2,3,3
-
-
-    // Assume hiddenSource is the parent of the items you're sorting
-var hiddenSourceItemsArray = Array.from(hiddenSource.querySelectorAll('div[role="listitem"]'));
-
-hiddenSourceItemsArray.sort(function(a, b) {
-  // Sorting logic remains the same
-  const aValue = a.querySelector('.pin-order').innerText;
-  const bValue = b.querySelector('.pin-order').innerText;
-
-  const aNum = parseInt(aValue, 10);
-  const bNum = parseInt(bValue, 10);
-
-  if ([1, 2, 3].includes(aNum) && [1, 2, 3].includes(bNum)) {
-    return aNum - bNum;
-  } else if ([1, 2, 3].includes(aNum)) {
-    return -1;
-  } else if ([1, 2, 3].includes(bNum)) {
-    return 1;
-  }
-  return 0;
-});
-
-// Re-insert sorted elements into their parent container
-hiddenSourceItemsArray.forEach(function(item) {
-  // This moves each item to the end of the parent container, effectively sorting them
-  hiddenSource.appendChild(item);
-});
-
-// If you need a NodeList of the sorted items for further operations
-var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"]');
-
-
-
-
-
-
-
-
-
     consoleLog('items length: '+hiddenSourceItems.length);
 
 
@@ -137,8 +94,7 @@ var hiddenSourceSortedItems = hiddenSource.querySelectorAll('div[role="listitem"
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; // Adjust the selector as needed
         var extractHref = hiddenSourceItems[i].querySelector('a').href; // Assuming the button is an <a> element
         var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution').innerText; // Value is either "Services" or "Solutions"
-        var extractPinOrder =  hiddenSourceItems[i].querySelector('.pin-order').innerText; // Value is 1,2,3 (anything else is unordered)
-
+        
         consoleLog(extractHeader);
         consoleLog(extractSummary);
         consoleLog(extractHref);
