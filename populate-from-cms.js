@@ -13,7 +13,7 @@
 
 // NOTE: Changing class or ID names on the webflow UI may break this script.
 
-console.log("fraiacmsjs .06"); 
+console.log("fraiacmsjs .07"); 
 
 function consoleLog(ctext) { 
     // console.log(ctext); // uncomment for testing
