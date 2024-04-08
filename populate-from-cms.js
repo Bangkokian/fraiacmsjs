@@ -120,7 +120,7 @@ function writeSolutionsServices() {
 
 
 
-    consoleLog('items length: '+hiddenSourceItems.length);
+    console.log('items length: '+hiddenSourceItems.length);
 
 
 
@@ -134,7 +134,7 @@ function writeSolutionsServices() {
         var extractServicesSolutions =  hiddenSourceItems[i].querySelector('#service-solution').innerText; 
         var extractPinOrder =  hiddenSourceItems[i].querySelector('.pin-order').innerText; // Value is 1,2,3 (anything else is unordered)
 
-        consoleLog(extractHeader);
+        console.log(extractHeader);
         consoleLog(extractSummary);
         consoleLog(extractHref);
         consoleLog("cat: "+extractServicesSolutions);
