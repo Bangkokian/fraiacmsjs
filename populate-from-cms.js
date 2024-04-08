@@ -85,8 +85,8 @@ function writeSolutionsServices() {
 
         hiddenSourceItems.sort(function(a, b) {
           // Sorting logic remains the same
-          const aValue = a.querySelector('.pin-order').innerText;
-          const bValue = b.querySelector('.pin-order').innerText;
+          var aValue = a.querySelector('.pin-order').innerText;
+          var bValue = b.querySelector('.pin-order').innerText;
 
           if (aValue == "Unpinned") aValue = "0"; // the FRAIA CMS uses "Unpinned" when pin orders are removed
           if (bValue == "Unpinned") bValue = "0";
