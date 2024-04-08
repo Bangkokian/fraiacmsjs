@@ -88,6 +88,9 @@ function writeSolutionsServices() {
           const aValue = a.querySelector('.pin-order').innerText;
           const bValue = b.querySelector('.pin-order').innerText;
 
+          if (aValue == "Unpinned") aValue = "0"; // the FRAIA CMS uses "Unpinned" when pin orders are removed
+          if (bValue == "Unpinned") bValue = "0";
+
           const aNum = parseInt(aValue, 10);
           const bNum = parseInt(bValue, 10);
 
