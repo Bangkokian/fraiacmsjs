@@ -127,7 +127,7 @@ function writeSolutionsServices() {
     // COPY THE CONTENTS FROM THE HIDDEN SOURCE. (THIS WRITES THE ALL TAB)
 
     // Loop through each item in the collection
-    for (var i = 0; i <= hiddenSourceItems.length; i++) {
+    for (var i = 0; i < hiddenSourceItems.length; i++) {
         var extractHeader = hiddenSourceItems[i].querySelector('h1').innerText; 
         var extractSummary = hiddenSourceItems[i].querySelector('.hidden-summary').innerText; 
         var extractHref = hiddenSourceItems[i].querySelector('a').href;
