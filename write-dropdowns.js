@@ -28,7 +28,7 @@ function writeDropdowns() {
 
     // WRITE THE FIRST DROPDONW
 
-     var hiddenSource = document.getElementById("collection-solutions");
+     var hiddenSource = document.getElementById("hiddenSource-ProductsServices");
      var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
 
@@ -36,7 +36,7 @@ function writeDropdowns() {
    // Loop through each item in the collection
     for (var i = 0; i < hiddenSourceItems.length; i++) {
         var item = hiddenSourceItems[i]; // Define item for the current iteration
-        var extractMenuItem = item.querySelector('div').textContent;
+        var extractMenuItem = item.querySelector('h1').textContent;
         var extractMenuURL = item.querySelector('a').href;
 
       
