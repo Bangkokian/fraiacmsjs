@@ -28,7 +28,7 @@ function writeDropdowns() {
 
     // WRITE THE FIRST DROPDONW
 
-     var hiddenSource = document.getElementById("hiddenSource-ProductsServices'");
+     var hiddenSource = document.getElementById("collection-solutions");
      var hiddenSourceItems = hiddenSource.querySelectorAll('div[role="listitem"]'); 
 
 
